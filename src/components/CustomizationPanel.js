@@ -8,10 +8,10 @@ const CustomizationPanel = ({ options, onUpdate }) => {
                     <h3>{category}</h3>
                     {options[category].map((option) => (
                         <button
-                            key={option}
+                            key={option.name}
                             onClick={() => onUpdate(category, option)}
                         >
-                            {option}
+                            {option.name}
                         </button>
                     ))}
                 </div>

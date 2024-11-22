@@ -1,37 +1,26 @@
 import React, { useState } from "react";
 import Preview from "./components/Preview";
 import CustomizationPanel from "./components/CustomizationPanel";
+import assets from "./assets/assets";
 import { toPng } from "html-to-image";
 import "./App.css";
 
-// Helper function to load filenames dynamically
-const importAssets = (category) => {
-    const context = require.context(
-        `./assets/${category}/`,
-        false,
-        /\.(png|jpe?g|svg)$/
-    );
-    return context.keys().map((file) => file.replace("./", ""));
-};
+
 
 const App = () => {
-    // Dynamically generate options from assets
-    const options = {
-        background: importAssets("backgrounds"),
-        body: importAssets("body"),
-        head: importAssets("head"),
-        eyes: importAssets("eyes"),
-        mouth: importAssets("mouth"),
-        accessories: importAssets("accessories"),
-    };
+    // Access options dynamically
+    const options = assets;
 
     const [selectedParts, setSelectedParts] = useState({
-        background: options.background[0],
-        body: options.body[0],
-        head: options.head[0],
+        accessories: options.accessories[0],  
+        backgrounds: options.backgrounds[0],
+        ears: options.ears[0],
         eyes: options.eyes[0],
+        hair: options.hair[0],
+        leg: options.leg[0],
         mouth: options.mouth[0],
-        accessories: options.accessories[0],
+        neck: options.neck[0],
+        nose: options.nose[0],
     });
 
     const updatePart = (category, option) => {
