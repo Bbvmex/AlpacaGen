@@ -1,0 +1,15 @@
+.customization-panel {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.customization-panel button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #f3f3f3;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
